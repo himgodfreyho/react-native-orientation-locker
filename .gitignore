@@ -2,3 +2,5 @@ node_modules/
 xcuserdata/
 xcshareddata/
 contents.xcworkspacedata
+.vscode
+.DS_Store

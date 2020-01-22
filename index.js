@@ -33,16 +33,20 @@ function getKey(listener) {
 }
 
 export default class Orientation {
-    static getOrientation = cb => {
-        OrientationNative.getOrientation(orientation => {
-            cb(orientation);
-        });
+    static getOrientation = () => {
+        return new Promise((resolve) => {
+            OrientationNative.getOrientation(orientation => {
+                resolve(orientation);
+            });
+        })
     };
 
-    static getDeviceOrientation = cb => {
-        OrientationNative.getDeviceOrientation(deviceOrientation => {
-            cb(deviceOrientation);
-        });
+    static getDeviceOrientation = () => {
+        return new Promise(resolve => {
+            OrientationNative.getDeviceOrientation(deviceOrientation => {
+                resolve(deviceOrientation);
+            });
+        })
     };
 
     static isLocked = () => {

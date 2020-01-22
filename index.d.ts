@@ -25,8 +25,8 @@ declare class Orientation {
   static lockToLandscapeRight(): void;
   static lockToPortraitUpsideDown(): void;
   static unlockAllOrientations(): void;
-  static getOrientation(callback: (orientation: OrientationType) => void): void;
-  static getDeviceOrientation(callback: (orientation: OrientationType) => void): void;
+  static getOrientation(): Promise<OrientationType>;
+  static getDeviceOrientation(): Promise<OrientationType>;
   static getAutoRotateState(callback: (state: boolean) => void): void;
 }
 export default Orientation;
